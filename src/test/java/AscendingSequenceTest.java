@@ -1,8 +1,20 @@
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
+
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+
 
 public class AscendingSequenceTest {
 
+    AscendingSequence as;
+
+    @BeforeEach
+    void setUp() {
+        as = new AscendingSequence();
+    }
+
+
+
+    @Order(1)
     @Test
     public void testAscendingSequenceTestHappyPathPositiveNumber() {
 
@@ -19,6 +31,7 @@ public class AscendingSequenceTest {
 
     }
 
+    @Order(2)
     @Test
     public void testAscendingSequenceTestHappyPathNegativeNumber() {
 
@@ -35,8 +48,9 @@ public class AscendingSequenceTest {
 
     }
 
+    @Order(3)
     @Test
-    public void testAscendingSequenceTestHappyPathNegativeNumbersPositiveNumber() {
+    public void testAscendingSequenceTestHappyPathNegativePositiveNumber() {
 
         // 0, 1,2,3,4,5
         int start = -5;
@@ -51,6 +65,7 @@ public class AscendingSequenceTest {
 
     }
 
+    @Order(4)
     @Test
     public void testAscendingSequenceHappyPassTwo() {
 
@@ -66,6 +81,7 @@ public class AscendingSequenceTest {
         Assertions.assertArrayEquals(expectedResult, actualResult);
 
     }
+
     @Test
     public void testAscendingSequenceStartLargeThenEnd() {
 
@@ -113,7 +129,6 @@ public class AscendingSequenceTest {
         Assertions.assertArrayEquals(expectedResult, actualResult);
 
     }
-
 
 
 }
