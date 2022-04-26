@@ -14,6 +14,7 @@ public class AscendingSequence {
 
         }
 
+
         return new int[]{};
     }
 
